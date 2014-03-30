@@ -10,7 +10,7 @@ import java.net.URLConnection;
 
 public class UrlImageUtils {
 	/**
-	 * 读取给定图片文件的内容，用FileInputStream
+	 * 璇诲彇缁欏畾鍥剧墖鏂囦欢鐨勫唴瀹癸紝鐢‵ileInputStream
 	 * @param filePath
 	 * @return
 	 */
@@ -40,7 +40,7 @@ public class UrlImageUtils {
 	}
 	
 	/**
-	 * 根据byte数组，创建一张新图。
+	 * 鏍规嵁byte鏁扮粍锛屽垱寤轰竴寮犳柊鍥俱�
 	 * @param newFileName
 	 * @param b
 	 */
@@ -50,14 +50,14 @@ public class UrlImageUtils {
 			FileOutputStream fStream = new FileOutputStream(file);
 			fStream.write(b);
 			fStream.close();
-			System.out.println("图片创建成功    " + b.length);
+			System.out.println("鍥剧墖鍒涘缓鎴愬姛    " + b.length);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
 	
 	/**
-	 * 获取指定网址的图片，返回其byte[]
+	 * 鑾峰彇鎸囧畾缃戝潃鐨勫浘鐗囷紝杩斿洖鍏禸yte[]
 	 * @param strUr1
 	 * @return
 	 */
@@ -77,8 +77,7 @@ public class UrlImageUtils {
 				while ((readLen = is.read(temp))>0) {
 					System.arraycopy(temp, 0, imgData, destPos, readLen);
 					//arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
-					//从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束
-					destPos+=readLen;
+					//浠庢寚瀹氭簮鏁扮粍涓鍒朵竴涓暟缁勶紝澶嶅埗浠庢寚瀹氱殑浣嶇疆寮�锛屽埌鐩爣鏁扮粍鐨勬寚瀹氫綅缃粨鏉�					destPos+=readLen;
 				}
 			}
 			return imgData;
@@ -90,7 +89,7 @@ public class UrlImageUtils {
 	}
 	
 	/**
-	 * 直接获取指定网址的图片，保存到文件中
+	 * 鐩存帴鑾峰彇鎸囧畾缃戝潃鐨勫浘鐗囷紝淇濆瓨鍒版枃浠朵腑
 	 * @param filePath
 	 * @param strUr1
 	 */
@@ -112,6 +111,6 @@ public class UrlImageUtils {
 	
 	public static void main(String[] args) {
 		System.out.println("fxk");
-		downloadFromInternet("./1.xls", "http://www.szse.cn/szseWeb/FrontController.szse?ACTIONID=8&CATALOGID=1842_xxpl&TABKEY=tab1&ENCODE=1&txtEnd=2014-03-27&txtStart=2014-03-27");
+		downloadFromInternet("D:/1.xls", "http://www.szse.cn/szseWeb/FrontController.szse?ACTIONID=8&CATALOGID=1842_xxpl&TABKEY=tab1&ENCODE=1&txtEnd=2014-03-27&txtStart=2014-03-27/");
 	}
 }
