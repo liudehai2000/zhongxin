@@ -1,0 +1,31 @@
+create table record(
+rid INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+date date,
+code char(6),
+alias tinytext,
+tradesum bigint,
+tradamoutn bigint,
+reason TINYTEXT,
+percent float
+);
+
+
+create table detail(
+rid INT UNSIGNED NOT NULL PRIMARY KEY,
+type varchar(3),
+torder smallint,
+name tinytext,
+insum bigint,
+outsum bigint,
+FOREIGN KEY(rid) REFERENCES record(rid) on update cascade on delete restrict
+);
+
+
+
+
+AUTO_INCREMENT = 100;
+
+
+Rid int(20) not null auto_increment,
+Primary key(id)  bigint 
+CONSTRAINT `xiaodi_ibfk_1` FOREIGN KEY (`dage_id`) REFERENCES `dage` (`id`)

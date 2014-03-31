@@ -8,5 +8,14 @@
 	<classpathentry kind="lib" path="E:/git_dehai/jar/jxl.jar"/>
 	<classpathentry kind="lib" path="E:/git_dehai/jar/log4j-1.2.15.jar"/>
 	<classpathentry kind="lib" path="E:/git_dehai/jar/mysql-connector-java-5.1.29-bin.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-examples-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-excelant-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-ooxml-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/poi-scratchpad-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/jsoup-1.7.3.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/jsoup-1.7.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/git_dehai/jar/jsoup-1.7.3-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
