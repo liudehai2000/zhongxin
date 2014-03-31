@@ -3,41 +3,19 @@ package SZSE;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import com.mysql.jdbc.Connection;
 
-class ds2{
-	String sql;
-	
-	String rid;
-	String type; //in or out
-	String torder;//1-5
-	String name;
-	String insum;
-	String outsum;
-	
-	ds2(String[] data,String table){
-		rid = data[0];
-		type = data[1];
-		torder = data[2];
-		name = data[3];
-		insum = data[4];
-		outsum = data[5];
-		
-		sql = "insert into "+table+" values("+
-				rid+","+
-				type+","+
-				torder+","+
-				name+","+
-				insum+","+
-				outsum+");";
-	}
-	
-	
-}
 
 public class ds1{
-	String sql;
+	static String sql;
 	
 	String rid;
 	String date;
@@ -46,44 +24,49 @@ public class ds1{
 	String tradesum;
 	String tradeamount;
 	String reason;
-	String percent;
+	float percent;
 	ds1(){
 		
 	}
-	ds1(String[] data,String table){
-		this.rid = data[0];
-		this.date = data[1];
-		this.alias = data[2];
-		this.tradesum = data[3];
-		this.tradeamount = data[4];
-		this.reason = data[5];
-		this.percent = data[6];
+	ds1(String[] data,String table) {
+		this.date = data[0];//==null?"null":data[0];
+		this.code = data[1];//==null?"null":data[1];
+		this.alias = data[2];//==null?"null":data[2];
+		this.tradesum = data[3];//==null?"null":data[3];
+		this.tradeamount = data[4];//==null?"null":data[4];
+		this.reason = data[5];//==null?"null":data[5];
+		this.percent = Float.parseFloat(data[6])/100;
 		
 		sql = "insert into "+table+" values("+
-				rid+","+
-				date+","+
-				code+","+
-				alias+","+
+				"null,'" +
+				date+"','"+
+				code+"','"+
+				alias+"',"+
 				tradesum+","+
-				tradeamount+","+
-				reason+","+
+				tradeamount+",'"+
+				reason+"',"+
 				percent+");";
+		try {
+			writeDB();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	static void writeDB() throws SQLException{
 		com.mysql.jdbc.Connection conn = dbConnection.getConnection();
 		Statement stmt = conn.createStatement();
-		String sql1 = "insert into test values (1);";
-		String sql2 = "select * from test;";
-		stmt.executeUpdate(sql1);
-		ResultSet rs = stmt.executeQuery(sql2);
-		if(rs.next()){
-			System.out.println(rs.getInt(1));
-		}
-	}
-	public static void main(String[] args) throws SQLException{
-		ds1.writeDB();
-	}
+		//String sql1 = "insert into test values (1);";
+		//String sql2 = "select * from test;";
+		
+		System.out.println(sql);
+		stmt.executeUpdate(sql);
 
+//		ResultSet rs = stmt.executeQuery(sql2);
+//		if(rs.next()){
+//			System.out.println(rs.getInt(1));
+//		}
+	}
 	
 }

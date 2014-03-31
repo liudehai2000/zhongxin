@@ -11,13 +11,13 @@ percent float
 
 
 create table detail(
-rid INT UNSIGNED NOT NULL PRIMARY KEY,
+date date,
+code char(6),
 type varchar(3),
-torder smallint,
 name tinytext,
 insum bigint,
 outsum bigint,
-FOREIGN KEY(rid) REFERENCES record(rid) on update cascade on delete restrict
+primary key(date,code)
 );
 
 
